@@ -1,0 +1,152 @@
+{
+  "subject": "HISTORY",
+  "year": 2020,
+  "session": "SEPTEMBER",
+  "total_marks": null,
+  "groups": [
+    {
+      "group_id": "QUESTION 1",
+      "title": "ISOSI 1A",
+      "questions": [
+        {
+          "id": "1.1.1",
+          "text": "Esi sicatshulwa sigxile kwintsingiselo yefilosofi yeBlack Consciousness kaSteve Biko ngowe1968.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 2",
+      "title": "ISOSI 1B",
+      "questions": [
+        {
+          "id": "2.1.1",
+          "text": "Le sosi ilandelayo inika ingcaciso yempembelelo yeBlack Consciousness Movement kuveli Mbele owayehlala eSoweto ngowe1976.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 3",
+      "title": "ISOSI 1C",
+      "questions": [
+        {
+          "id": "3.1.1",
+          "text": "Esi sicatshulwa sigxile kwimpembelelo yeBlack Consciousness Movement (BCM) kubafundi beminyaka yowe1970's.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 4",
+      "title": "ISOSI 1D",
+      "questions": [
+        {
+          "id": "4.1.1",
+          "text": "Le yikhathuni eyenziwe nguZapiro ukukhumbuza ngoSteve Biko neyathi yapapashwa kwiDaily Maverick yomhla we19 kweyoMsintsi 2017.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 5",
+      "title": "ISOSI 2A",
+      "questions": [
+        {
+          "id": "5.1.1",
+          "text": "Esi sicatshulwa sichaza izizathu zokuqulunqwa kweTRC yipalamente yokuqala yedemokhrasi ngowe1995.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 6",
+      "title": "ISOSI 2B",
+      "questions": [
+        {
+          "id": "6.1.1",
+          "text": "Esi sicatshulwa sigxile kwizizathu nakwindlela awayetyengwa ngayo uAmy Biehl ngomhla wama25 kweyeThupa 1993 eKapa.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 7",
+      "title": "ISOSI 2C",
+      "questions": [
+        {
+          "id": "7.1.1",
+          "text": "Le sosi igxile ekuveni kweengxelo zababecela uxolelo ngokubulala uAmy Biehl ngomhla we8 kweyeKhala 1997 eKapa.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 8",
+      "title": "ISOSI 2D",
+      "questions": [
+        {
+          "id": "8.1.1",
+          "text": "Le foto ibonisa ababulali bakaAmy Biehl kuvivwongxelo loxolelo lwabo ngomhla we8 kweyeKhala 1997 eKapa.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 9",
+      "title": "ISOSI 3A",
+      "questions": [
+        {
+          "id": "9.1.1",
+          "text": "Le sosi ingezantsi ichaza intsingiselo yeglobalizeyishini.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 10",
+      "title": "ISOSI 3B",
+      "questions": [
+        {
+          "id": "10.1.1",
+          "text": "Le sosi inika ingcaciso ngefuthe leglobalizeyishini kwinkcubeko zamazwe asaphuhlayo.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 11",
+      "title": "ISOSI 3C",
+      "questions": [
+        {
+          "id": "11.1.1",
+          "text": "Esi sicatshulwa singezantsi inika ingcaciso ngendlela olwayiqalazela ngayo inkampani multi-national company, 'Nike,' ngowe1998.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    },
+    {
+      "group_id": "QUESTION 12",
+      "title": "ISOSI 3D",
+      "questions": [
+        {
+          "id": "12.1.1",
+          "text": "Le powusta ihlasela ookopolotyeni baseWashington D.C. ngowe1998.",
+          "marks": null,
+          "options": []
+        }
+      ]
+    }
+  ]
+}
