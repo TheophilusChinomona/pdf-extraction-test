@@ -1,0 +1,1194 @@
+{
+  "meta": {
+    "subject": "AGRICULTURAL SCIENCES",
+    "year": 2023,
+    "session": "SEPTEMBER",
+    "paper": "P2",
+    "total_marks": 150
+  },
+  "sections": [
+    {
+      "section_id": "SECTION A",
+      "questions": [
+        {
+          "id": "1.1.1",
+          "model_answers": [
+            "B"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.1",
+              "value": "B",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.2",
+          "model_answers": [
+            "C"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.2",
+              "value": "C",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.3",
+          "model_answers": [
+            "C"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.3",
+              "value": "C",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.4",
+          "model_answers": [
+            "A"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.4",
+              "value": "A",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.5",
+          "model_answers": [
+            "B"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.5",
+              "value": "B",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.6",
+          "model_answers": [
+            "D"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.6",
+              "value": "D",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.7",
+          "model_answers": [
+            "C"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.7",
+              "value": "C",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.8",
+          "model_answers": [
+            "D"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.8",
+              "value": "D",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.9",
+          "model_answers": [
+            "B"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.9",
+              "value": "B",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.1.10",
+          "model_answers": [
+            "A"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.1.10",
+              "value": "A",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.2.1",
+          "model_answers": [
+            "G"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.2.1",
+              "value": "G",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.2.2",
+          "model_answers": [
+            "D"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.2.2",
+              "value": "D",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.2.3",
+          "model_answers": [
+            "E"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.2.3",
+              "value": "E",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.2.4",
+          "model_answers": [
+            "C"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.2.4",
+              "value": "C",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.2.5",
+          "model_answers": [
+            "F"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.2.5",
+              "value": "F",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.3.1",
+          "model_answers": [
+            "Marketing chain"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.3.1",
+              "value": "Marketing chain",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.3.2",
+          "model_answers": [
+            "Elasticity"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.3.2",
+              "value": "Elasticity",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.3.3",
+          "model_answers": [
+            "Labour"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.3.3",
+              "value": "Labour",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.3.4",
+          "model_answers": [
+            "Management"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.3.4",
+              "value": "Management",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.3.5",
+          "model_answers": [
+            "Heritability"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.3.5",
+              "value": "Heritability",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "1.4.1",
+          "model_answers": [
+            "Entrepreneur"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.4.1",
+              "value": "Entrepreneur",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "1.4.2",
+          "model_answers": [
+            "SWOT"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.4.2",
+              "value": "SWOT",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "1.4.3",
+          "model_answers": [
+            "Biometrics"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.4.3",
+              "value": "Biometrics",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "1.4.4",
+          "model_answers": [
+            "Aneuploidy"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.4.4",
+              "value": "Aneuploidy",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "1.4.5",
+          "model_answers": [
+            "Estimated Breeding Value"
+          ],
+          "answers": [
+            {
+              "sub_id": "1.4.5",
+              "value": "Estimated Breeding Value",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION B",
+      "questions": [
+        {
+          "id": "2.1.1",
+          "model_answers": [
+            "Packaging"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.1.1",
+              "value": "Packaging",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.1.2",
+          "answers": [
+            {
+              "sub_id": "2.1.2",
+              "value": "Packaging must not contaminate the produce",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.1.2",
+              "value": "Packaging must protect produce from physical damage",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.1.2",
+              "value": "Packaging must be recyclable",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.1.2",
+              "value": "Packaging should provide useful information about the product",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "2.1.3",
+          "answers": [
+            {
+              "sub_id": "2.1.3",
+              "value": "Marketing is the activity or business of promoting and selling products or services, including market research and advertising.",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "2.2.1",
+          "answers": [],
+          "marks": 6
+        },
+        {
+          "id": "2.2.2",
+          "answers": [
+            {
+              "sub_id": "2.2.2",
+              "value": "R45",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.2.3",
+          "model_answers": [
+            "The higher the price the higher the supply",
+            "The lower the price the lower the supply"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.2.3",
+              "value": "The higher the price the higher the supply",
+              "marks": 2
+            },
+            {
+              "sub_id": "2.2.3",
+              "value": "The lower the price the lower the supply",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "2.2.4",
+          "answers": [
+            {
+              "sub_id": "2.2.4",
+              "value": "Technology",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.2.4",
+              "value": "Production costs",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.2.4",
+              "value": "Government subsidies",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.2.4",
+              "value": "Environmental conditions",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.2.4",
+              "value": "Competitive products",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.2.4",
+              "value": "Political instability",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "2.3.1",
+          "answers": [
+            {
+              "sub_id": "2.3.1",
+              "value": "A – Mass marketing",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.3.1",
+              "value": "B – Niche Marketing",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.3.1",
+              "value": "C – Multi-segment marketing",
+              "marks": 1
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": "2.3.2",
+          "model_answers": [
+            "Marketing approach B"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.3.2",
+              "value": "Marketing approach B",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.3.3",
+          "answers": [
+            {
+              "sub_id": "2.3.3",
+              "value": "It has cheaper marketing costs",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.3.3",
+              "value": "Less competition from big businesses",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.3.3",
+              "value": "Producers enjoy a monopoly",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "2.4.1",
+          "model_answers": [
+            "Eco labelling"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.4.1",
+              "value": "Eco labelling",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.4.2",
+          "answers": [
+            {
+              "sub_id": "2.4.2",
+              "value": "It is the adoption of farm activities that are ecologically friendly and socially healthy",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.4.3",
+          "answers": [
+            {
+              "sub_id": "2.4.3",
+              "value": "Recyclable",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.4.3",
+              "value": "Biodegradable",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "2.5.1",
+          "model_answers": [
+            "Farmers have no control over pricing"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.5.1",
+              "value": "Farmers have no control over pricing",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.5.2",
+          "model_answers": [
+            "Farmers working together"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.5.2",
+              "value": "Farmers working together",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.5.3",
+          "model_answers": [
+            "Co-operative marketing"
+          ],
+          "answers": [
+            {
+              "sub_id": "2.5.3",
+              "value": "Co-operative marketing",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "2.5.4",
+          "answers": [
+            {
+              "sub_id": "2.5.4",
+              "value": "Ability to meet market requirements for volume and consistent supply",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.5.4",
+              "value": "Economies of scale",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.5.4",
+              "value": "Bargaining power",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.5.4",
+              "value": "Access to better infrastructure",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.5.4",
+              "value": "Access to professional expertise",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.5.4",
+              "value": "Access to funding",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "2.6.1",
+          "answers": [
+            {
+              "sub_id": "2.6.1",
+              "value": "They are used to secure funding",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.1",
+              "value": "Guide daily operations",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.1",
+              "value": "Determine financial needs",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.1",
+              "value": "Gain knowledge about marketing opportunities",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.1",
+              "value": "To foresee problems, which reduce risk",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "2.6.2",
+          "answers": [
+            {
+              "sub_id": "2.6.2",
+              "value": "Business plan templates can be obtained online",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.2",
+              "value": "Online business planning experts who provide advice and guidance",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.2",
+              "value": "Financial formulae that do calculations automatically to get accurate numbers and figures",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.2",
+              "value": "Design tools for a professional-looking business plan",
+              "marks": 1
+            },
+            {
+              "sub_id": "2.6.2",
+              "value": "Measurement tools to measure the impact of your business plan",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        }
+      ]
+    },
+    {
+      "section_id": "QUESTION 3",
+      "questions": [
+        {
+          "id": "3.1.1",
+          "answers": [
+            {
+              "sub_id": "3.1.1",
+              "value": "Land is subject to the law of diminishing returns",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.1.2",
+          "answers": [
+            {
+              "sub_id": "3.1.2",
+              "value": "Water management/irrigation/rainwater harvesting",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.2",
+              "value": "Restoring the land's potential",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.2",
+              "value": "Consolidation of uneconomic land units",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.2",
+              "value": "Use of scientific farming methods",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.2",
+              "value": "Improving soil fertility",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.1.3",
+          "answers": [
+            {
+              "sub_id": "3.1.3",
+              "value": "Enables production of food",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.3",
+              "value": "Provides physical space for human settlements",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.3",
+              "value": "Provides physical space for agricultural activities",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.3",
+              "value": "It is an asset that can be used as collateral",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.1.3",
+              "value": "It is a source of minerals",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.2.1",
+          "answers": [
+            {
+              "sub_id": "3.2.1",
+              "value": "Labour Relations Act / Act 66 of 1995",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.2.2",
+          "answers": [
+            {
+              "sub_id": "3.2.2",
+              "value": "Involvement of employees in decision making",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.2",
+              "value": "Prevents unfair labour practices",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.2",
+              "value": "Gives employees /employers right to form trade unions / associations",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.2",
+              "value": "Provides procedures for the resolution of labour disputes",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.2.3",
+          "answers": [
+            {
+              "sub_id": "3.2.3",
+              "value": "Poor motivation",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.3",
+              "value": "Low wages",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.3",
+              "value": "Poor working conditions",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.3",
+              "value": "Unfair labour practices",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.2.4",
+          "answers": [
+            {
+              "sub_id": "3.2.4",
+              "value": "Having the right type and number of workers",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.4",
+              "value": "Giving clear instructions to workers",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.4",
+              "value": "Providing the right type and number of tools or equipment",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.2.4",
+              "value": "Motivating workers",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.3.1",
+          "model_answers": [
+            "Income statement"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.3.1",
+              "value": "Income statement",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.3.2",
+          "answers": [
+            {
+              "sub_id": "3.3.2",
+              "value": "Net income = Income – Expenses",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.2",
+              "value": "= R740 000 – R138 500",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.2",
+              "value": "= R601 500",
+              "marks": 2
+            }
+          ],
+          "marks": 4
+        },
+        {
+          "id": "3.3.3",
+          "answers": [
+            {
+              "sub_id": "3.3.3",
+              "value": "The farm is profitable because the net income is positive",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "3.3.4",
+          "answers": [
+            {
+              "sub_id": "3.3.4",
+              "value": "Depreciation",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.4",
+              "value": "Insurance",
+              "marks": 1
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "3.3.5",
+          "answers": [
+            {
+              "sub_id": "3.3.5",
+              "value": "Manage the capital of the farm",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.5",
+              "value": "Analyse past and current performance of the farm business",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.5",
+              "value": "Plan the future of the business",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.5",
+              "value": "Apply for loans",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.3.5",
+              "value": "Provide information for tax purposes",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.4.1",
+          "answers": [
+            {
+              "sub_id": "3.4.1",
+              "value": "An item of property owned by a person or company, regarded as having value.",
+              "marks": 2
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "3.4.2",
+          "model_answers": [
+            "Movable capital"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.4.2",
+              "value": "Movable capital",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.4.3",
+          "model_answers": [
+            "Medium term credit"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.4.3",
+              "value": "Medium term credit",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.4.4",
+          "answers": [
+            {
+              "sub_id": "3.4.4",
+              "value": "Commercial banks",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.4.4",
+              "value": "The land bank",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.4.4",
+              "value": "Trust companies",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.4.4",
+              "value": "Potential investors",
+              "marks": 1
+            }
+          ],
+          "marker_instruction": "(Any 2 x 1)",
+          "marks": 2
+        },
+        {
+          "id": "3.4.5",
+          "model_answers": [
+            "Inventory"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.4.5",
+              "value": "Inventory",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.5.1",
+          "answers": [
+            {
+              "sub_id": "3.5.1",
+              "value": "Cash flow",
+              "marks": 1
+            },
+            {
+              "sub_id": "3.5.1",
+              "value": "Workforce competence",
+              "marks": 1
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "3.5.2",
+          "model_answers": [
+            "Workforce competence"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.5.2",
+              "value": "Workforce competence",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.6.1",
+          "model_answers": [
+            "Interpersonal and communication skills"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.6.1",
+              "value": "Interpersonal and communication skills",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "3.6.2",
+          "model_answers": [
+            "Financial management skills"
+          ],
+          "answers": [
+            {
+              "sub_id": "3.6.2",
+              "value": "Financial management skills",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        }
+      ]
+    },
+    {
+      "section_id": "QUESTION 4",
+      "questions": [
+        {
+          "id": "4.1.1",
+          "model_answers": [
+            "Dihybrid cross"
+          ],
+          "answers": [
+            {
+              "sub_id": "4.1.1",
+              "value": "Dihybrid cross",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "4.1.2",
+          "answers": [
+            {
+              "sub_id": "4.1.2",
+              "value": "Black",
+              "marks": 1
+            },
+            {
+              "sub_id": "4.1.2",
+              "value": "Solid",
+              "marks": 1
+            }
+          ],
+          "marks": 2
+        },
+        {
+          "id": "4.1.3",
+          "model_answers": [
+            "AaBb"
+          ],
+          "answers": [
+            {
+              "sub_id": "4.1.3",
+              "value": "AaBb",
+              "marks": 1
+            }
+          ],
+          "marks": 1
+        },
+        {
+          "id": "4.1.4",
+          "model_answers": [
+            "Law of independent assortment"
+          ],
+          "answers": [
+            
