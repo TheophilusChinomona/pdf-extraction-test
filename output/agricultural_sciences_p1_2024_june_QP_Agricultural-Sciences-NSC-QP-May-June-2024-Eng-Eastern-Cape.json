@@ -1,0 +1,244 @@
+{
+  "subject": "AGRICULTURAL SCIENCES",
+  "year": 2024,
+  "session": "JUNE",
+  "total_marks": 150,
+  "groups": [
+    {
+      "group_id": "QUESTION 1",
+      "title": "SECTION A",
+      "questions": [
+        {
+          "id": "1.1.1",
+          "text": "... is a muscular valve that opens to allow food to pass from the stomach to the top of the small intestine:",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "Cardiac sphincter"
+            },
+            {
+              "label": "B",
+              "text": "Pyloric sphincter"
+            },
+            {
+              "label": "C",
+              "text": "Urethral sphincter"
+            },
+            {
+              "label": "D",
+              "text": "Anal sphincter"
+            }
+          ]
+        },
+        {
+          "id": "1.1.2",
+          "text": "A type of feed has a TDN of 80% and a DP of 18%. The Nutritive Ratio of this feed will be ...",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "1 : 0,78."
+            },
+            {
+              "label": "B",
+              "text": "1 : 5,4."
+            },
+            {
+              "label": "C",
+              "text": "1 : 3,4."
+            },
+            {
+              "label": "D",
+              "text": "1 : 4,4."
+            }
+          ]
+        },
+        {
+          "id": "1.1.3",
+          "text": "The succus entericus is secreted by the ...",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "glands of Lieberkühn."
+            },
+            {
+              "label": "B",
+              "text": "pancreas."
+            },
+            {
+              "label": "C",
+              "text": "liver."
+            },
+            {
+              "label": "D",
+              "text": "Brunners' glands."
+            }
+          ]
+        },
+        {
+          "id": "1.1.4",
+          "text": "The following are the functions of rumen microbes:\n\n(i)  Hydrolyse proteins\n(ii) Digest cellulose\n(iii) Synthesise amino acids\n(iv) Synthesise vitamin C\n\nChoose the CORRECT combination:",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "(i), (ii) and (iii)"
+            },
+            {
+              "label": "B",
+              "text": "(i), (iii) and (iv)"
+            },
+            {
+              "label": "C",
+              "text": "(ii), (iii) and (iv)"
+            },
+            {
+              "label": "D",
+              "text": "(i), (ii) and (iv)"
+            }
+          ]
+        },
+        {
+          "id": "1.1.5",
+          "text": "A ... is an example of a three-host tick.",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "blue tick"
+            },
+            {
+              "label": "B",
+              "text": "red legged tick"
+            },
+            {
+              "label": "C",
+              "text": "bont-legged tick"
+            },
+            {
+              "label": "D",
+              "text": "bont tick"
+            }
+          ]
+        },
+        {
+          "id": "1.1.6",
+          "text": "A long flat ribbon shaped worm, whose body consist of hundreds of segments.",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "Roundworm"
+            },
+            {
+              "label": "B",
+              "text": "Liver fluke"
+            },
+            {
+              "label": "C",
+              "text": "Tapeworm"
+            },
+            {
+              "label": "D",
+              "text": "Wire worm"
+            }
+          ]
+        },
+        {
+          "id": "1.1.7",
+          "text": "A roofless enclosure where livestock are temporarily confined.",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "Holding shed"
+            },
+            {
+              "label": "B",
+              "text": "Holding pen"
+            },
+            {
+              "label": "C",
+              "text": "Furrowing pen"
+            },
+            {
+              "label": "D",
+              "text": "Feed shed"
+            }
+          ]
+        },
+        {
+          "id": "1.1.8",
+          "text": "... is when animals lose body heat through contact of the animal's body with a cold surface.",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "Conduction"
+            },
+            {
+              "label": "B",
+              "text": "Excretion"
+            },
+            {
+              "label": "C",
+              "text": "Convection"
+            },
+            {
+              "label": "D",
+              "text": "Heat radiation"
+            }
+          ]
+        },
+        {
+          "id": "1.1.9",
+          "text": "The correct temperature to store semen that will be used after a long time:",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "37 °C"
+            },
+            {
+              "label": "B",
+              "text": "42 °C"
+            },
+            {
+              "label": "C",
+              "text": "5 °C"
+            },
+            {
+              "label": "D",
+              "text": "-196 °C"
+            }
+          ]
+        },
+        {
+          "id": "1.1.10",
+          "text": "... is the hormone responsible for the milk release reflex.",
+          "marks": 2,
+          "options": [
+            {
+              "label": "A",
+              "text": "Oestrogen"
+            },
+            {
+              "label": "B",
+              "text": "Progesterone"
+            },
+            {
+              "label": "C",
+              "text": "Prolactin"
+            },
+            {
+              "label": "D",
+              "text": "Oxytocin"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
