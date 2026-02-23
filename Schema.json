@@ -1,0 +1,860 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Extraction and export schemas",
+    "description": "Schemas for: (1) output/ export format (joined QP + memo rows), (2) raw question paper extraction, (3) raw memo extraction, (4) document sections (instructions). Export script: scripts/export_history_papers.py → output/YYYY-MM-DD/*.json.",
+    "output_export": {
+      "description": "Format of JSON files in output/ (e.g. output/2026-02-14/*.json). One array of joined question rows: each row = one question with QP + memo fields. Produced by build_json_output() in scripts/export_history_papers.py.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "qp_scraped_file_id": { "type": "string", "description": "UUID of scraped question paper file" },
+          "question_paper_file_name": { "type": "string", "description": "QP PDF filename" },
+          "memo_scraped_file_id": { "type": ["string", "null"], "description": "UUID of scraped memo file or null" },
+          "memo_file_name": { "type": ["string", "null"], "description": "Memo PDF filename or null" },
+          "question_id": { "type": "string", "description": "Question number e.g. 1.1.1, 2.3.2" },
+          "parent_id": { "type": ["string", "null"], "description": "Parent question ID for sub-questions e.g. 1.1, 2.6" },
+          "group_id": { "type": "string", "description": "e.g. QUESTION 1, QUESTION 2" },
+          "group_title": { "type": "string", "description": "Section/topic heading e.g. SECTION A, SECTION A: SOURCE-BASED QUESTIONS" },
+          "subject": { "type": "string", "description": "e.g. HISTORY P1, AGRICULTURAL SCIENCES P2" },
+          "year": { "type": "integer", "description": "Exam year" },
+          "grade": { "type": "string", "description": "e.g. 12" },
+          "session": { "type": "string", "description": "e.g. NOVEMBER, MAY/JUNE, SEPTEMBER" },
+          "paper_number": { "type": "string", "description": "e.g. P1, P2 (from filename)" },
+          "question_text": { "type": "string", "description": "Question text from QP" },
+          "marks": { "type": ["integer", "null"], "description": "Marks for this question" },
+          "scenario": { "type": ["string", "null"], "description": "Case study / word bank / source instruction" },
+          "context": { "type": ["string", "null"], "description": "Intro text or diagram description" },
+          "qp_options": {
+            "type": ["array", "null"],
+            "description": "MCQ options from QP",
+            "items": { "type": "object", "properties": { "label": { "type": "string" }, "text": { "type": "string" } } }
+          },
+          "memo_question_text": { "type": ["string", "null"], "description": "Memo topic/heading for this question" },
+          "marker_instruction": { "type": ["string", "null"], "description": "Instructions for AI grader" },
+          "model_answers": {
+            "description": "List of valid facts, or dict e.g. { positives: [], negatives: [] }",
+            "oneOf": [
+              { "type": "null" },
+              { "type": "array", "items": { "type": "string" } },
+              { "type": "object" }
+            ]
+          },
+          "sub_answers": {
+            "type": ["array", "null"],
+            "description": "Per sub-question answers: [{ sub_id, value, marks?, ... }]",
+            "items": { "type": "object" }
+          },
+          "memo_structured_answer": {
+            "type": ["array", "null"],
+            "description": "Paired answers e.g. [{ strategy, motivation, mark }]",
+            "items": { "type": "object" }
+          },
+          "memo_marks": { "type": ["integer", "null"] },
+          "memo_max_marks": { "type": ["integer", "null"] },
+          "memo_notes": { "type": ["string", "null"] },
+          "memo_topic": { "type": ["string", "null"] },
+          "essay_structure": {
+            "type": ["object", "null"],
+            "description": "For essay questions: introduction, body_sections, conclusion",
+            "properties": {
+              "introduction": { "type": "array", "items": { "type": "string" } },
+              "body_sections": { "type": "array", "items": { "type": "object" } },
+              "conclusion": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "qp_download_url": { "type": "string", "description": "GCS/Firebase URL for QP PDF" },
+          "memo_download_url": { "type": ["string", "null"], "description": "GCS/Firebase URL for memo PDF or null" }
+        },
+        "required": ["qp_scraped_file_id", "question_paper_file_name", "question_id", "group_id", "group_title", "subject", "year", "grade", "session", "paper_number", "question_text", "qp_download_url"]
+      }
+    },
+    "question_paper": {
+      "$defs": {
+        "MatchColumnItem": {
+          "description": "A single item in a match column question.",
+          "properties": {
+            "label": {
+              "description": "The identifier, e.g., '1.3.1' or 'A'",
+              "title": "Label",
+              "type": "string"
+            },
+            "text": {
+              "description": "The content of the item",
+              "title": "Text",
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "text"
+          ],
+          "title": "MatchColumnItem",
+          "type": "object"
+        },
+        "MatchData": {
+          "description": "Structure for 'Match Column A with B' questions - keeps columns SEPARATE.\n\nIMPORTANT: Do NOT attempt to link/match items between columns.\nColumn B often has MORE items than Column A (distractors).",
+          "properties": {
+            "column_a_title": {
+              "default": "COLUMN A",
+              "description": "Title of Column A",
+              "title": "Column A Title",
+              "type": "string"
+            },
+            "column_b_title": {
+              "default": "COLUMN B",
+              "description": "Title of Column B",
+              "title": "Column B Title",
+              "type": "string"
+            },
+            "column_a_items": {
+              "description": "Items in Column A (numbered items like 1.3.1, 1.3.2)",
+              "items": {
+                "$ref": "#/$defs/MatchColumnItem"
+              },
+              "title": "Column A Items",
+              "type": "array"
+            },
+            "column_b_items": {
+              "description": "ALL items in Column B including distractors (labeled A, B, C, etc.)",
+              "items": {
+                "$ref": "#/$defs/MatchColumnItem"
+              },
+              "title": "Column B Items",
+              "type": "array"
+            }
+          },
+          "title": "MatchData",
+          "type": "object"
+        },
+        "MultipleChoiceOption": {
+          "description": "A single option for a multiple choice question.",
+          "properties": {
+            "label": {
+              "description": "Option label: A, B, C, or D",
+              "title": "Label",
+              "type": "string"
+            },
+            "text": {
+              "description": "The content/text of the option",
+              "title": "Text",
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "text"
+          ],
+          "title": "MultipleChoiceOption",
+          "type": "object"
+        },
+        "Question": {
+          "description": "A single question from an exam paper.",
+          "properties": {
+            "id": {
+              "description": "The full question number, e.g., 1.1.1, 2.3.2",
+              "title": "Id",
+              "type": "string"
+            },
+            "parent_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Parent question ID for sub-questions (e.g., '2.6' for questions 2.6.1, 2.6.2)",
+              "title": "Parent Id"
+            },
+            "text": {
+              "description": "The actual question text (transcribed exactly)",
+              "title": "Text",
+              "type": "string"
+            },
+            "marks": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Marks allocated to this question",
+              "title": "Marks"
+            },
+            "scenario": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Case study text OR word bank for fill-in-blank questions",
+              "title": "Scenario"
+            },
+            "context": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Introductory/framing text for essays, or visual diagram descriptions",
+              "title": "Context"
+            },
+            "options": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/MultipleChoiceOption"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "For MCQs only: list of A/B/C/D options",
+              "title": "Options"
+            },
+            "match_data": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MatchData"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "For match column questions: separate lists for Column A and B"
+            },
+            "guide_table": {
+              "anyOf": [
+                {
+                  "items": {},
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "For fill-in-blank: statements as [{\"1.2.1\": \"statement...\"}]",
+              "title": "Guide Table"
+            }
+          },
+          "required": [
+            "id",
+            "text"
+          ],
+          "title": "Question",
+          "type": "object"
+        },
+        "QuestionGroup": {
+          "description": "A group of related questions (Section or Main Question).",
+          "properties": {
+            "group_id": {
+              "description": "e.g., 'QUESTION 1' or 'SECTION A'",
+              "title": "Group Id",
+              "type": "string"
+            },
+            "title": {
+              "description": "The group heading text. When section_title is set, title may duplicate it or hold a short label.",
+              "title": "Title",
+              "type": "string"
+            },
+            "section_title": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Section heading when applicable, e.g. 'SECTION A: SOURCE-BASED QUESTIONS', 'SECTION B: ESSAY QUESTIONS'",
+              "title": "Section Title"
+            },
+            "question_topic": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Main question topic: for source-based the paragraph-question topic; for essays the essay topic, e.g. 'CASE STUDY \u2013 CHINA'",
+              "title": "Question Topic"
+            },
+            "instructions": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Specific instructions for this section/group",
+              "title": "Instructions"
+            },
+            "questions": {
+              "description": "List of questions in this group",
+              "items": {
+                "$ref": "#/$defs/Question"
+              },
+              "title": "Questions",
+              "type": "array"
+            }
+          },
+          "required": [
+            "group_id",
+            "title"
+          ],
+          "title": "QuestionGroup",
+          "type": "object"
+        }
+      },
+      "description": "Complete extraction result for an examination paper.\n\nThis is the primary output model for exam paper extraction.",
+      "properties": {
+        "subject": {
+          "description": "Subject name, e.g., 'Business Studies P1'",
+          "title": "Subject",
+          "type": "string"
+        },
+        "syllabus": {
+          "description": "Syllabus type, e.g., 'SC' or 'NSC'",
+          "title": "Syllabus",
+          "type": "string"
+        },
+        "year": {
+          "description": "Examination year, e.g., 2025",
+          "title": "Year",
+          "type": "integer"
+        },
+        "session": {
+          "description": "Examination session, e.g., 'MAY/JUNE' or 'NOV'",
+          "title": "Session",
+          "type": "string"
+        },
+        "grade": {
+          "description": "Grade level, e.g., '12'",
+          "title": "Grade",
+          "type": "string"
+        },
+        "language": {
+          "default": "English",
+          "description": "Document language, e.g., 'English', 'Afrikaans', 'IsiZulu'",
+          "title": "Language",
+          "type": "string"
+        },
+        "total_marks": {
+          "default": 150,
+          "description": "Total marks for the paper",
+          "title": "Total Marks",
+          "type": "integer"
+        },
+        "groups": {
+          "description": "Question groups (Sections or Main Questions)",
+          "items": {
+            "$ref": "#/$defs/QuestionGroup"
+          },
+          "title": "Groups",
+          "type": "array"
+        },
+        "processing_metadata": {}
+      },
+      "required": [
+        "subject",
+        "syllabus",
+        "year",
+        "session",
+        "grade"
+      ],
+      "title": "FullExamPaper",
+      "type": "object"
+    },
+    "memo": {
+      "$defs": {
+        "EssayStructure": {
+          "description": "Essay structure for Section C essay questions.\n\nCaptures the hierarchical structure of essay answers including\nintroduction, body sections with sub-topics, and conclusion.\n\nBody sections use flexible Dict[str, Any] to handle various structures:\n- Simple lists: {\"sub_topic\": \"...\", \"points\": [...]}\n- Positive/negative splits: {\"sub_topic\": \"...\", \"positives\": [...], \"negatives\": [...]}\n- Rights lists: {\"sub_topic\": \"...\", \"rights\": [...]}",
+          "properties": {
+            "introduction": {
+              "description": "List of valid introduction points",
+              "items": {
+                "type": "string"
+              },
+              "title": "Introduction",
+              "type": "array"
+            },
+            "body_sections": {
+              "description": "List of sub-topics. Each dict must have 'sub_topic' key plus keys like 'points', 'positives', 'negatives', 'rights' containing lists of valid facts",
+              "items": {},
+              "title": "Body Sections",
+              "type": "array"
+            },
+            "conclusion": {
+              "description": "List of valid conclusion points",
+              "items": {
+                "type": "string"
+              },
+              "title": "Conclusion",
+              "type": "array"
+            }
+          },
+          "title": "EssayStructure",
+          "type": "object"
+        },
+        "MemoQuestion": {
+          "description": "Represents the correct answer block for a specific question.\n\nHandles various answer types including:\n- Multiple choice\n- Fill-in-blank (with sub-questions)\n- Match columns\n- Essay questions with structured answers\n- Questions with model answers (list of valid facts)",
+          "properties": {
+            "id": {
+              "description": "The question number, e.g., '1.1', '2.3', '5'",
+              "title": "Id",
+              "type": "string"
+            },
+            "text": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "The topic/heading of the answer, e.g., 'Advantages of TQM'",
+              "title": "Text"
+            },
+            "type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Question type: 'Multiple Choice', 'Essay', 'Match Columns', 'Complete the statements', etc.",
+              "title": "Type"
+            },
+            "model_answers": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {},
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "List of ALL valid facts listed in the memo. For questions with positive/negative aspects, use dict with 'positives'/'negatives' keys",
+              "title": "Model Answers"
+            },
+            "answers": {
+              "anyOf": [
+                {
+                  "items": {},
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "For sub-questions like 1.2.1, 1.2.2. Format: [{'sub_id': '1.2.1', 'value': 'Answer', 'marks': 2}]. Include marker_instruction per item when the memo specifies it (e.g. 'any 2 x 2', '1 x 1').",
+              "title": "Answers"
+            },
+            "structured_answer": {
+              "anyOf": [
+                {
+                  "items": {},
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "For questions requiring paired answers. Format: [{'strategy': '...', 'motivation': '...', 'mark': 2}] or [{'function': '...', 'motivation': '...', 'points': [...]}]",
+              "title": "Structured Answer"
+            },
+            "marks": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Total marks allocated to this question",
+              "title": "Marks"
+            },
+            "max_marks": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Maximum marks (used when more facts are given than marks available)",
+              "title": "Max Marks"
+            },
+            "marker_instruction": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "CRITICAL instructions for the AI grader, e.g., 'Mark the first TWO only' or 'Do not award marks for motivations if strategies are incorrect'",
+              "title": "Marker Instruction"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Additional notes or clarifications about the answer",
+              "title": "Notes"
+            },
+            "topic": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Main topic for essay questions (Section C)",
+              "title": "Topic"
+            },
+            "essay_structure": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EssayStructure"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Only populated for Essay questions (Section C)"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "title": "MemoQuestion",
+          "type": "object"
+        },
+        "MemoSection": {
+          "description": "Represents a section in the marking guideline.\n\nSections typically include:\n- SECTION A: Multiple choice, fill-in-blank, matching\n- SECTION B: Short answer and application questions\n- SECTION C: Essay questions",
+          "properties": {
+            "section_id": {
+              "description": "Section identifier: 'SECTION A', 'SECTION B', 'SECTION C'",
+              "title": "Section Id",
+              "type": "string"
+            },
+            "questions": {
+              "description": "List of questions in this section",
+              "items": {
+                "$ref": "#/$defs/MemoQuestion"
+              },
+              "title": "Questions",
+              "type": "array"
+            }
+          },
+          "required": [
+            "section_id"
+          ],
+          "title": "MemoSection",
+          "type": "object"
+        }
+      },
+      "description": "Complete marking guideline (memorandum) extraction result.\n\nThis is the primary output model for memo extraction, containing all\ncorrect answers and marking instructions for an examination paper.",
+      "properties": {
+        "meta": {},
+        "sections": {
+          "description": "List of sections with questions and answers",
+          "items": {
+            "$ref": "#/$defs/MemoSection"
+          },
+          "title": "Sections",
+          "type": "array"
+        },
+        "processing_metadata": {}
+      },
+      "required": [
+        "meta"
+      ],
+      "title": "MarkingGuideline",
+      "type": "object"
+    },
+    "instructions": {
+      "question_paper_sections": {
+        "description": "Sections extracted from a question paper: cover, student instructions, information sheet.",
+        "type": "object",
+        "properties": {
+          "cover_page": {
+            "type": "object",
+            "description": "Page 1: organization, certificate, grade, subject, session/year, document type, marks, time, page count.",
+            "properties": {
+              "organization": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "certificate": {
+                "type": "string"
+              },
+              "grade": {
+                "type": "string"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "session": {
+                "type": "string"
+              },
+              "document_type": {
+                "type": "string",
+                "description": "e.g. 'Question Paper'"
+              },
+              "marks": {
+                "type": "integer"
+              },
+              "time": {
+                "type": "string"
+              },
+              "page_count": {
+                "type": "integer"
+              },
+              "info_sheet_count": {
+                "type": "integer"
+              }
+            }
+          },
+          "student_instructions": {
+            "type": "object",
+            "description": "Usually page 2: instructions and information for candidates.",
+            "properties": {
+              "header": {
+                "type": "string",
+                "description": "e.g. 'INSTRUCTIONS AND INFORMATION'"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "number": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "notes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "information_sheet": {
+            "description": "Last page if present: formulae, tables, constants. Null if none.",
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "header": {
+                    "type": "string",
+                    "description": "e.g. 'INFORMATION SHEET'"
+                  },
+                  "formulae": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "latex": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "tables": {
+                    "type": "array"
+                  },
+                  "constants": {
+                    "type": "array"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "cover_page",
+          "student_instructions",
+          "information_sheet"
+        ]
+      },
+      "memo_sections": {
+        "description": "Sections extracted from marking guidelines / memo: cover, marker notes.",
+        "type": "object",
+        "properties": {
+          "cover_page": {
+            "type": "object",
+            "description": "Page 1 of memo.",
+            "properties": {
+              "organization": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "certificate": {
+                "type": "string"
+              },
+              "grade": {
+                "type": "string"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "session": {
+                "type": "string"
+              },
+              "document_type": {
+                "type": "string",
+                "description": "e.g. 'Marking Guidelines'"
+              },
+              "marks": {
+                "type": "integer"
+              },
+              "page_count": {
+                "type": "integer"
+              }
+            }
+          },
+          "marker_notes": {
+            "type": "object",
+            "description": "Pages 2-6 typically: notes to markers.",
+            "properties": {
+              "header": {
+                "type": "string",
+                "description": "e.g. 'NOTES TO MARKERS'"
+              },
+              "preamble": {
+                "type": "string"
+              },
+              "sections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "number": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "subsections": {
+                      "type": "array"
+                    }
+                  }
+                }
+              },
+              "cognitive_verbs": {
+                "type": "object",
+                "properties": {
+                  "simple": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "complex": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "essay_marking": {
+                "type": "object",
+                "properties": {
+                  "max_content": {
+                    "type": "integer"
+                  },
+                  "max_insight": {
+                    "type": "integer"
+                  },
+                  "insight_components": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "cover_page",
+          "marker_notes"
+        ]
+      }
+    }
+  }
+  
